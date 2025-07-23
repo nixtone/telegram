@@ -1,7 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use DefStudio\Telegraph\Facades\Telegraph;
 
 Route::get('/', function () {
-    return view('welcome');
+    $send = Telegraph::message('this is great')->send();
+    dd($send);
+
 });
